@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, SafeAreaView, Alert } from 'react-native';
-import { useDimensions } from '@react-native-community/hooks';
+import { Button, StyleSheet, SafeAreaView, Alert, View } from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 export default function App() {
+
+  const {landscape} = useDeviceOrientation();
 
   const image = {
     uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -12,14 +14,14 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{backgroundColor: "green"}}>
-      <Button
-        color="orange"
-        title="Click Me, Senpai" 
-        onPress={
-          () => Alert.prompt("My Title", "My Message", text => console.log(text))
-        }
-      />
+    <SafeAreaView style={{backgroundColor: "yellow"}}>
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100%",
+          height: landscape ? '100%' : '30%'
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
