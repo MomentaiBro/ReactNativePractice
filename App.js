@@ -12,7 +12,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{backgroundColor: "orange"}}>
+    <SafeAreaView style={{backgroundColor: "green"}}>
       <Button
         color="orange"
         title="Click Me, Senpai" 
