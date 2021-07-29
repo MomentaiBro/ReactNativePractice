@@ -1,36 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, SafeAreaView, Alert, View } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { View } from 'react-native';
 
 export default function App() {
 
-  const {landscape} = useDeviceOrientation();
-
-  const image = {
-    uri: 'https://reactnative.dev/img/tiny_logo.png',
-    width: 128,
-    height: 128,
-  }
 
   return (
-    <SafeAreaView style={{backgroundColor: "yellow"}}>
+    <View
+      style={{
+        backgroundColor: "rgb(100, 100, 100)",
+        flex: 1
+      }}
+    >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "100%",
-          height: landscape ? '100%' : '30%'
-        }}
-      ></View>
-    </SafeAreaView>
+          flex:3
+        }}/>
+      <View
+        style={{
+          backgroundColor: "gold",
+          flex:1
+        }}/>
+      <View
+        style={{
+          backgroundColor: "tomato",
+          flex:1
+        }}/>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f1f1f1',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
